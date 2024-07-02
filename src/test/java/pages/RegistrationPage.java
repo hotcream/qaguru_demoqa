@@ -8,6 +8,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static utils.JavascriptHelper.removeBannerAndFooter;
 
 public class RegistrationPage {
 
@@ -24,13 +25,15 @@ public class RegistrationPage {
             state = $("#state"),
             city = $("#city"),
             stateCityWrapper = $("#stateCity-wrapper"),
-            uploadPicture = $("#uploadPicture");
+            uploadPicture = $("#uploadPicture"),
+            studentRegistrationFormTitle = $(".practice-form-wrapper");
     CalendarComponent calendarComponent = new CalendarComponent();
     ResultTableComponent resultTableComponent = new ResultTableComponent();
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
-        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+        removeBannerAndFooter();
+        studentRegistrationFormTitle.shouldHave(text("Student Registration Form"));
         return this;
     }
 
