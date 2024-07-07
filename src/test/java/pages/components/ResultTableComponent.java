@@ -1,6 +1,7 @@
 package pages.components;
 
 import com.codeborne.selenide.SelenideElement;
+import enums.ResultTableEnums;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.text;
@@ -14,14 +15,15 @@ public class ResultTableComponent {
             resultTitle = $("#example-modal-sizes-title-lg");
 
 
-    public ResultTableComponent checkTable(String key, String value) {
-        resultTable.$(byText(key)).parent()
+    public ResultTableComponent checkTable(ResultTableEnums key, String value) {
+        System.out.println(key + " " + value);
+        resultTable.$(byText(key.toString())).parent()
                 .shouldHave(text(value));
         return this;
     }
 
-    public ResultTableComponent checkTitle(String value) {
-        resultTitle.shouldHave(exactText(value));
+    public ResultTableComponent checkTitle() {
+        resultTitle.shouldHave(exactText("Thanks for submitting the form"));
         return this;
     }
     public ResultTableComponent checkTitleMissing() {
