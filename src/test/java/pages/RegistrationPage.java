@@ -114,11 +114,6 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage checkResultTable(ResultTableEnums key, String value) {
-        resultTableComponent.checkTable(key,value);
-        return this;
-    }
-
     public RegistrationPage checkResultTable(Map<ResultTableEnums, String> results) {
         results.forEach((key, value) -> resultTableComponent.checkTable(key, value));
         return this;
