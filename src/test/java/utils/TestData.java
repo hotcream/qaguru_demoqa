@@ -22,7 +22,6 @@ public class TestData {
             state = getRandomState(),
             city = getRandomCity(state);
 
-
     public static String getRandomFirstName() {
         return faker.name().firstName();
     }

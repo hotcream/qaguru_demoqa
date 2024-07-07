@@ -16,13 +16,14 @@ public class ResultTableComponent {
 
 
     public ResultTableComponent checkTable(ResultTableEnums key, String value) {
+        System.out.println(key + " " + value);
         resultTable.$(byText(key.toString())).parent()
                 .shouldHave(text(value));
         return this;
     }
 
-    public ResultTableComponent checkTitle(String value) {
-        resultTitle.shouldHave(exactText(value));
+    public ResultTableComponent checkTitle() {
+        resultTitle.shouldHave(exactText("Thanks for submitting the form"));
         return this;
     }
     public ResultTableComponent checkTitleMissing() {

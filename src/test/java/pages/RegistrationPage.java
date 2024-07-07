@@ -5,6 +5,8 @@ import enums.ResultTableEnums;
 import pages.components.CalendarComponent;
 import pages.components.ResultTableComponent;
 
+import java.util.Map;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -117,13 +119,18 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage checkResultTitle(String value) {
-        resultTableComponent.checkTitle(value);
+    public RegistrationPage checkResultTable(Map<ResultTableEnums, String> results) {
+        results.forEach((key, value) -> resultTableComponent.checkTable(key, value));
+        return this;
+    }
+
+    public RegistrationPage checkResultTitle() {
+        resultTableComponent.checkTitle();
         return this;
     }
 
     public RegistrationPage checkTitleMissing() {
-        resultTableComponent.checkTitleMissing();
+        resultTableComponent.checkTitleMissing() ;
         return this;
     }
 }
