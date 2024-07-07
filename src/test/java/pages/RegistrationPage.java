@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import enums.ResultTableEnums;
 import pages.components.CalendarComponent;
 import pages.components.ResultTableComponent;
 
@@ -111,7 +112,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage checkResultTable(String key, String value) {
+    public RegistrationPage checkResultTable(ResultTableEnums key, String value) {
         resultTableComponent.checkTable(key,value);
         return this;
     }
