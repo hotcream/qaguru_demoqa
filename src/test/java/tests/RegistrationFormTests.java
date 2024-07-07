@@ -14,8 +14,9 @@ public class RegistrationFormTests extends BaseTest {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
-    void checkRegistrationFormAllFields() {
+    void checkRegistrationFormAllFieldsTest() {
         registrationPage.openPage()
+                .removeBannerAndFooter()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setEmail(testData.email)
@@ -45,8 +46,9 @@ public class RegistrationFormTests extends BaseTest {
     }
 
     @Test
-    void checkRegistrationFormRequiredFields() {
+    void checkRegistrationFormRequiredFieldsTest() {
         registrationPage.openPage()
+                .removeBannerAndFooter()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setEmail(testData.email)
@@ -65,8 +67,9 @@ public class RegistrationFormTests extends BaseTest {
     }
 
     @Test
-    void checkRegistrationFormWithoutLastName() {
+    void checkRegistrationFormWithoutLastNameTest() {
         registrationPage.openPage()
+                .removeBannerAndFooter()
                 .setFirstName(testData.firstName)
                 .setEmail(testData.email)
                 .setGender(testData.gender)
