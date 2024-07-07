@@ -10,8 +10,8 @@ import java.util.Map;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.open;
-import static utils.JavascriptHelper.removeBannerAndFooter;
 
 public class RegistrationPage {
 
@@ -35,8 +35,13 @@ public class RegistrationPage {
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
-        removeBannerAndFooter();
         studentRegistrationFormTitle.shouldHave(text("Student Registration Form"));
+        return this;
+    }
+
+    public RegistrationPage removeBannerAndFooter() {
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         return this;
     }
 
