@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import utils.TestData;
@@ -8,6 +9,7 @@ import java.util.Map;
 
 import static enums.ResultTableEnums.*;
 
+@Tag("positive")
 public class RegistrationFormTests extends BaseTest {
 
     TestData testData = new TestData();
