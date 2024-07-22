@@ -1,5 +1,7 @@
 package tests;
 
+import jdk.jfr.Name;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
@@ -10,13 +12,15 @@ import java.util.Map;
 import static enums.ResultTableEnums.*;
 
 @Tag("regression")
+@DisplayName("Registration form tests")
 public class RegistrationFormTests extends BaseTest {
 
     TestData testData = new TestData();
     RegistrationPage registrationPage = new RegistrationPage();
 
-    @Tag("smoke")
     @Test
+    @Tag("smoke")
+    @DisplayName("Check the registration form with all fields filled in")
     void checkRegistrationFormAllFieldsTest() {
         registrationPage.openPage()
                 .removeBannerAndFooter()
@@ -49,6 +53,7 @@ public class RegistrationFormTests extends BaseTest {
     }
 
     @Test
+    @DisplayName("Check the registration form for required fields")
     void checkRegistrationFormRequiredFieldsTest() {
         registrationPage.openPage()
                 .removeBannerAndFooter()
@@ -69,8 +74,9 @@ public class RegistrationFormTests extends BaseTest {
                 );
     }
 
-    @Tag("negative")
     @Test
+    @Tag("negative")
+    @DisplayName("Check the Registration Form Without the Last Name")
     void checkRegistrationFormWithoutLastNameTest() {
         registrationPage.openPage()
                 .removeBannerAndFooter()
