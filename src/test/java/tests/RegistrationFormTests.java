@@ -1,6 +1,5 @@
 package tests;
 
-import jdk.jfr.Name;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -9,7 +8,15 @@ import utils.TestData;
 
 import java.util.Map;
 
-import static enums.ResultTableEnums.*;
+import static enums.ResultTableEnums.ADDRESS;
+import static enums.ResultTableEnums.DATE_OF_BIRTH;
+import static enums.ResultTableEnums.GENDER;
+import static enums.ResultTableEnums.MOBILE;
+import static enums.ResultTableEnums.PICTURE;
+import static enums.ResultTableEnums.STATE_AND_CITY;
+import static enums.ResultTableEnums.STUDENT_EMAIL;
+import static enums.ResultTableEnums.STUDENT_NAME;
+import static enums.ResultTableEnums.SUBJECTS;
 
 @Tag("regression")
 @DisplayName("Registration form tests")
