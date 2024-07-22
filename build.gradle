@@ -48,6 +48,15 @@ tasks.withType(Test) {
     }
 }
 
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
+    useJUnitPlatform {
+        if (System.getProperty("type") != null && !System.getProperty("type").isEmpty()) {
+            includeTags System.getProperty("type")
+        }
+    }
+}
+
 task registration_form(type: Test) {
     useJUnitPlatform {
         includeTags("positive")

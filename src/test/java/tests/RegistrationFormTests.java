@@ -9,12 +9,13 @@ import java.util.Map;
 
 import static enums.ResultTableEnums.*;
 
-@Tag("positive")
+@Tag("regression")
 public class RegistrationFormTests extends BaseTest {
 
     TestData testData = new TestData();
     RegistrationPage registrationPage = new RegistrationPage();
 
+    @Tag("positive")
     @Test
     void checkRegistrationFormAllFieldsTest() {
         registrationPage.openPage()
@@ -47,6 +48,7 @@ public class RegistrationFormTests extends BaseTest {
                 );
     }
 
+    @Tag("positive")
     @Test
     void checkRegistrationFormRequiredFieldsTest() {
         registrationPage.openPage()
@@ -68,6 +70,7 @@ public class RegistrationFormTests extends BaseTest {
                 );
     }
 
+    @Tag("negative")
     @Test
     void checkRegistrationFormWithoutLastNameTest() {
         registrationPage.openPage()
