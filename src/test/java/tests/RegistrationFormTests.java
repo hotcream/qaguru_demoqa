@@ -15,7 +15,7 @@ public class RegistrationFormTests extends BaseTest {
     TestData testData = new TestData();
     RegistrationPage registrationPage = new RegistrationPage();
 
-    @Tag("positive")
+    @Tag("smoke")
     @Test
     void checkRegistrationFormAllFieldsTest() {
         registrationPage.openPage()
@@ -48,7 +48,6 @@ public class RegistrationFormTests extends BaseTest {
                 );
     }
 
-    @Tag("positive")
     @Test
     void checkRegistrationFormRequiredFieldsTest() {
         registrationPage.openPage()
