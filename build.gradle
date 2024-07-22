@@ -59,6 +59,6 @@ tasks.withType(Test) {
 
 task registration_form(type: Test) {
     useJUnitPlatform {
-        includeTags("positive")
+        includeTags("regression")
     }
 }
